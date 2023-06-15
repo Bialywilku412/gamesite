@@ -11,7 +11,7 @@
     <main>
     <header class="p-3 bg-dark text-white">
         <div class="h33">
-        <h3><img src="Bas_Vanderheyden_Logo.png" alt="Bedrijf foto" width="150"></h3>
+        <img src="xgames.png" alt="Bedrijf foto" width="100"></h3>
         </div>
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -31,14 +31,14 @@
         </div>
     </header>
     </main>
-    <body style="background-color: #8B0000">
+    <body style="background-color: #808080">
 <div class="body1">
     <div class="h33">
     <h1>    </h1>
 
         <div class="klant">
-        <h2>Artikelen</h2>
-    <ul>
+        <h2>nieuwe crud moet gemaakt worden</h2>
+  <!---  <<ul>
         <li><a href="readartikel.php">read</a></li>
         <li><a href="searchartikel.php">search </a></li>
         <li><a href="updateartikelFormulier1.php">update</a></li>

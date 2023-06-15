@@ -1,10 +1,9 @@
-
-<!DOCTYPE html>
-<html lang="nl">
-<head>
+<!doctype html>
+<html>
+<!-- lemar-->	<head>
     <meta name="author" content="Anjo Eijweriks"
           charset="UTF-8">
-    <title>magazijn</title>
+    <title>gar-menu.php</title>
     <link rel="stylesheet" href="garage.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- navbar -->
@@ -25,29 +24,49 @@
                         <li><a href="MagazijnMedewerker.php" class="nav-link px-2 text-white">leverancier</a></li>
                         <li><a href="bezorger.php"class="nav-link px-2 text-white">console</a></li>
                         <li><a href="verkoper.php" class="nav-link px-2 text-white">accesories</a></li>
-                   
+                       
                 </ul>
-               
-        </div>
-    </header>
+             
+            </div>
+        </header>
     </main>
-    <body style="background-color: #808080">
-<div class="body1">
-    <div class="h33">
-    <h1>    </h1>
-    <div class="klant">
-        <h2>leverancier</h2>
-    <ul>
-         <li><a href="createleverancierFormulier1.php">create</a></li> 
-        <li><a href="readleverancier.php">read</a></li>
-        <li><a href="searchleverancier.php">search </a></li>
-        <li><a href="updateleverancierFormulier1.php">update</a></li>
-        <li><a href="deleteleverancierFormulier1.php">delete</a></li>
-    </ul>
-    </div>
-</div>
-</body>
-<style>
+</head>
+<body STYLE="background-color: #808080">
+	<div class="h33">
+		<p><h1>update klant formulier 2</h1></p>
+		
+		<?php
+			// Anjo Eijeriks
+			require "klant.php";					// nodig om object te maken
+			$klantid = $_POST["klantidvak"];	// uitlezen vakje van klant 
+			$klant1 = new klant();				// object aanmaken
+			$klant1->searchklant($klantid);	
+			// properties in variabelen zetten
+			$naam=$klant1->getnaam();
+			$email=$klant1->getemail();
+			$adres=$klant1->getadres();
+			$postcode=$klant1->getpostcode();
+            $woonplaats=$klant1->getwoonplaats();
+            
+		?>
+	</div>
+		<form class="contact-form" action="updateleverancierFormulier3.php"method="post">
+			<!-- $klant mag niet meer gewijzigd worden -->
+            <?php echo $klantid ?>
+            <input type="hidden" class="contact-form-text" name="klantidvak" value="<?php echo $klantid; ?> ">
+            <input type="text"   class="contact-form-text" name="naamVak"      value="<?php echo $naam;      ?> ">
+            <input type="text"   class="contact-form-text" name="emailvak" value="<?php echo $email; ?> ">
+			<input type="text"   class="contact-form-text" name="adresvak" value="<?php echo $adres; ?> ">
+            <input type="text"   class="contact-form-text" name="postcodeVak"  value="<?php echo $postcode;  ?> ">
+            <input type="text"   class="contact-form-text" name="woonplaatsvak"  value="<?php echo $woonplaats;  ?> ">
+			<input type="submit" class="contatct-form-btn" value="Verstuur"><br/><br/>
+		</form>
+
+
+
+        <a href="home.php"><br/>Terug naar het hoofdmenu</a>
+	</body>	
+	<style>
 
 .footer {
   position: fixed;
@@ -63,4 +82,9 @@
 <div class="footer">
   <p>Bel nu gratis naar  0800.11.11.216 </p>
 </div>
-</html>
+
+
+
+
+
+

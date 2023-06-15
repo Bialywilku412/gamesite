@@ -10,7 +10,7 @@
     <main>
     <header class="p-3 bg-dark text-white">
         <div class="h33">
-            <h4><br>Gamedeluxe </h4>
+            <h4><br>Welcome </h4>
         </div>
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -23,10 +23,10 @@
     </main>
 
 </head>
-<body style="background-color: #8B0000">
+<body style="background-color: #808080">
 <div class="h33">
     <div class="img">
-    <img src="Bas_Vanderheyden_Logo.png" alt="Bedrijf foto" width="600">
+    <img src="xgames.png" alt="Bedrijf foto" width="200">
     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="Home.php" class="nav-link px-2 text-white">Home</a></li>
                         <li><a href="Magazijnmeester.php" class="nav-link px-2 text-white">games</a></li>
@@ -49,7 +49,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: red;
+  background-color: darkgray;
   color: white;
   text-align: center;
 }

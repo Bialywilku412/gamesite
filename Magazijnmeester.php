@@ -11,7 +11,7 @@
     <main>
     <header class="p-3 bg-dark text-white">
         <div class="h33">
-        <h3><img src="Bas_Vanderheyden_Logo.png" alt="Bedrijf foto" width="150"></h3>
+        <h3><img src="xgames.png" alt="Bedrijf foto" width="100"></h3>
         </div>
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -31,17 +31,17 @@
         </div>
     </header>
     </main>
-    <body style="background-color: #8B0000">
+    <body style="background-color: #808080">
 <div class="body1">
     <div class="h33">
     <h1>    </h1>
         <h2>Games</h2>
     <ul>
-        <li><a href="CreateArtikelFormulier1.php">create</a></li> 
-        <li><a href="readartikel.php">read</a></li>
-        <li><a href="searchartikel.php">search </a></li>
-        <li><a href="updateartikelFormulier1.php">update</a></li>
-        <li><a href="deleteartikelFormulier1.php">delete</a></li>
+        <li><a href="CreategameFormulier1.php">create</a></li> 
+        <li><a href="readgame.php">read</a></li>
+        <li><a href="searchgame.php">search </a></li>
+        <li><a href="updategameFormulier1.php">update</a></li>
+        <li><a href="deletegameFormulier1.php">delete</a></li>
     </ul>       
     </div>
 </body>
@@ -52,7 +52,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: red;
+  background-color: darkgray;
   color: white;
   text-align: center;
 }
