@@ -4,7 +4,7 @@
 <head>
     <meta name="author" content="Anjo Eijweriks"
           charset="UTF-8">
-    <title>magazijnmeester</title>
+    <title>Games</title>
     <link rel="stylesheet" href="garage.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- navbar -->
@@ -35,7 +35,7 @@
 <div class="body1">
     <div class="h33">
     <h1>    </h1>
-        <h2>artikelen</h2>
+        <h2>Games</h2>
     <ul>
         <li><a href="CreateArtikelFormulier1.php">create</a></li> 
         <li><a href="readartikel.php">read</a></li>
