@@ -21,10 +21,10 @@
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="Home.php" class="nav-link px-2 text-white">Home</a></li>
-                        <li><a href="Magazijnmeester.php" class="nav-link px-2 text-white">magazijnmeester</a></li>
-                        <li><a href="MagazijnMedewerker.php" class="nav-link px-2 text-white">MagazijnMedewerker</a></li>
-                        <li><a href="bezorger.php"class="nav-link px-2 text-white">bezorger</a></li>
-                        <li><a href="verkoper.php" class="nav-link px-2 text-white">verkoper</a></li>
+                <li><a href="Magazijnmeester.php" class="nav-link px-2 text-white">games</a></li>
+                        <li><a href="MagazijnMedewerker.php" class="nav-link px-2 text-white">leverancier</a></li>
+                        <li><a href="bezorger.php"class="nav-link px-2 text-white">console</a></li>
+                        <li><a href="verkoper.php" class="nav-link px-2 text-white">accesories</a></li>
                        
                 </ul>
                
@@ -34,7 +34,7 @@
 </head>
 <body STYLE="background-color: #8B0000">
 <div class="h33">
-		<h1>update artikel formulier 1</h1>
+		<h1>update game formulier </h1>
 		<form class="contact-form" action="updateartikelFormulier2.php" method="post">
 			<input type="text" id = "artid"class="contact-form-text" name="artidvak" placeholder="artid">
 			<input type="submit" class="contatct-form-btn" value="Verstuur"><br/><br/>

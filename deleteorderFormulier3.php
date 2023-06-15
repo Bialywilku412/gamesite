@@ -21,10 +21,10 @@
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="Home.php" class="nav-link px-2 text-white">Home</a></li>
-                        <li><a href="Magazijnmeester.php" class="nav-link px-2 text-white">magazijnmeester</a></li>
-                        <li><a href="MagazijnMedewerker.php" class="nav-link px-2 text-white">MagazijnMedewerker</a></li>
-                        <li><a href="bezorger.php"class="nav-link px-2 text-white">bezorger</a></li>
-                        <li><a href="verkoper.php" class="nav-link px-2 text-white">verkoper</a></li>
+                <li><a href="Magazijnmeester.php" class="nav-link px-2 text-white">games</a></li>
+                        <li><a href="MagazijnMedewerker.php" class="nav-link px-2 text-white">leverancier</a></li>
+                        <li><a href="bezorger.php"class="nav-link px-2 text-white">console</a></li>
+                        <li><a href="verkoper.php" class="nav-link px-2 text-white">accesories</a></li>
                        
                 </ul>
                

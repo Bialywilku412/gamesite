@@ -33,10 +33,10 @@
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li><a href="Home.php" class="nav-link px-2 text-white">Home</a></li>
-              <li><a href="Magazijnmeester.php" class="nav-link px-2 text-white">magazijnmeester</a></li>
-              <li><a href="MagazijnMedewerker.php" class="nav-link px-2 text-white">MagazijnMedewerker</a></li>
-              <li><a href="bezorger.php"class="nav-link px-2 text-white">bezorger</a></li>
-              <li><a href="verkoper.php" class="nav-link px-2 text-white">verkoper</a></li>
+              <li><a href="Magazijnmeester.php" class="nav-link px-2 text-white">games</a></li>
+                        <li><a href="MagazijnMedewerker.php" class="nav-link px-2 text-white">leverancier</a></li>
+                        <li><a href="bezorger.php"class="nav-link px-2 text-white">console</a></li>
+                        <li><a href="verkoper.php" class="nav-link px-2 text-white">accesories</a></li>
             </ul>
         
           </div>
@@ -44,26 +44,26 @@
   </header>
   <main>
     <div class="h33">
-      <h1>Dit formulier wordt gebruikt om artikelgegevens in te voeren. </h1>
+      <h1>Dit formulier wordt gebruikt om game gegevens in te voeren. </h1>
       </div>
           <div class="contact-section">
         <h1>     </h1>
 
         <form class="contact-form" action="createartikelFormulier2.php" method="post">
           <label>
-            <input type="text" id = "artOmschrijvingvak" class="contact-form-text" placeholder="artOmschrijving" name="artOmschrijvingvak"><br/>
+            <input type="text" id = "artOmschrijvingvak" class="contact-form-text" placeholder="game name" name="artOmschrijvingvak"><br/>
           </label>
           <label>
-            <input type="number"  id = "artInkoopvak" class="contact-form-text" placeholder="artInkoop"name="artInkoopvak"><br/>
+            <input type="number"  id = "artInkoopvak" class="contact-form-text" placeholder="platform"name="artInkoopvak"><br/>
           </label>
           <label>
-            <input type="number"  id = "artVerkoopvak" class="contact-form-text" placeholder="artVerkoop" name="artVerkoopvak"><br/>
+            <input type="number"  id = "artVerkoopvak" class="contact-form-text" placeholder="prijs" name="artVerkoopvak"><br/>
           </label>
           <label>
-            <input type="number"  id = "artVoorraadvak" class="contact-form-text" placeholder="artVoorraad" name="artVoorraadvak"><br/>
+            <input type="number"  id = "artVoorraadvak" class="contact-form-text" placeholder="voorrad" name="artVoorraadvak"><br/>
           </label> 
           <label>
-            <input type="number"  id = "artMinVoorraadvak" class="contact-form-text" placeholder="artMinVoorraad" name="artMinVoorraadvak"><br/>
+            <input type="number"  id = "artMinVoorraadvak" class="contact-form-text" placeholder="" name="artMinVoorraadvak"><br/>
           </label>
           <label>
             <input type="number"  id = "artMaxVoorraadvak" class="contact-form-text" placeholder="artMaxVoorraad" name="artMaxVoorraadvak"><br/>
