@@ -5,10 +5,12 @@ $dbname = "school";
 $username = "root";
 $password = "";
 
-try{
+try
+{
     $conn = new PDO("mysql:host=$servername;dbname=$dbname;", $username, $password);
-    echo "connected  <br>";
 }
-catch(PDOException $e){
-    echo "Disconnected :" . $e->getMessage(). "<br>";;
+catch (PDOException $e)
+{
+    echo "Disconnected :" . $e->getMessage() . "<br>";
+    ;
 }
