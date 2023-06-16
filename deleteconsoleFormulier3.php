@@ -37,14 +37,14 @@
 		<?php
 			require "order.php";
 
-		    $verkOrdid = $_POST["verkOrdidvak"];
+		    $consoleid = $_POST["consoleidvak"];
 			$verwijderen = $_POST["verwijderBox"];
 			
 			if ($verwijderen=="ja")
 			{
 				echo "De order is verwijderd <br/>";
 				$order =  new order();
-				$order->deleteorder($verkOrdid);
+				$order->deleteorder($consoleid);
 			}
 			else
 			{

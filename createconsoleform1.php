@@ -49,9 +49,7 @@
   <h1>     </h1>
 
   <form class="contact-form" action="createconsoleForm2.php" method="post">
-  <label>
-      <input type="text" id = "consoleidvak" class="contact-form-text" placeholder="consoleid" name="consoleidvak"><br/>
-    </label>
+
     <label>
       <input type="text" id = "consolenaamvak" class="contact-form-text" placeholder="consolenaam" name="consolenaamvak"><br/>
     </label>

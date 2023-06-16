@@ -34,15 +34,15 @@
 		<?php
 			// Anjo Eijeriks
 			require "order.php";					// nodig om object te maken
-			$verkOrdid = $_POST["verkOrdidvak"];	// uitlezen vakje van klant 
+			$consoleid = $_POST["consoleidvak"];	// uitlezen vakje van klant 
 			$order = new order();				// object aanmaken
-			$order->searchorder($verkOrdid);	
+			$order->searchorder($consoleid);	
 			
 		?>
 		
 		<form class="contact-form" action="deleteconsoleFormulier3.php" method="post">
 			<!-- $klant mag niet meer gewijzigd worden -->
-			<input type="hidden"  class="contact-form-text" name="verkOrdidvak" value=" <?php echo $verkOrdid ?> ">
+			<input type="hidden"  class="contact-form-text" name="consoleidvak" value=" <?php echo $consoleid ?> ">
 			<!-- 2x verwijderBox om nee of ja door te kunnen geven -->
 			<input type="hidden" 	name="verwijderBox" value="nee">			
 			<input type="checkbox" 	name="verwijderBox" value="ja">

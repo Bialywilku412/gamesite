@@ -4,7 +4,7 @@
 	class order 
 	{
 		// properties - eigenschappen -------------------
-		protected string $consoleid;
+		
 		protected string $consolenaam;
 		protected string $consoleprijs;
 		protected string $consoletype;
@@ -12,9 +12,9 @@
 
 		// methoden - functies -------------------
 		// constructor
-		function __construct($consoleid="", $consolenaam="", $consoleprijs="", $consoletype="")
+		function __construct($consolenaam="", $consoleprijs="", $consoletype="")
 		{
-			$this->consoleid=$consoleid;
+
 			$this->consolenaam=$consolenaam;
 			$this->consoleprijs=$consoleprijs;
 			$this->consoletype=$consoletype;
@@ -22,10 +22,7 @@
         }
 
 		// setters
-		public function setconsoleid($consoleid)
-		{
-			$this->consoleid=$consoleid;
-		}
+	
 		public function setconsolenaam($consolenaam)
 		{
 			$this->consolenaam=$consolenaam;
@@ -41,10 +38,7 @@
 		
 	
 		// getters
-		public function getconsoleid()
-		{
-			return $this->consoleid;
-		}
+		
 		public function getconsolenaam()
 		{
 			return $this->consolenaam;
@@ -62,8 +56,7 @@
 		{
 
 			// afdrukken object -------------------
-			echo $this->getconsoleid();
-			echo "<br/>";
+			
 			echo $this->getconsolenaam();
 			echo "<br/>";
 			echo $this->getconsoleprijs();
@@ -78,7 +71,7 @@
 			require "connectSchool.php";
 
 			// gegevens naar variabele
-			$consoleid = $this->getconsoleid();
+		
 			$consolenaam	 = $this->getconsolenaam();
 			$consoleprijs = $this->getconsoleprijs();
 			$consoletype = $this->getconsoletype();
@@ -91,6 +84,7 @@
 			");
 
 			// variabelen in de statement
+
 			$sql->bindParam(":consoleid", $consoleid);
 			$sql->bindParam(":consolenaam", $consolenaam);
 			$sql->bindParam(":consoleprijs", $consoleprijs);
@@ -104,7 +98,7 @@
 		{
 			require "connectSchool.php";
 			// statement maken
-			$sql = $conn->prepare("select * from verkooporders where 1");
+			$sql = $conn->prepare("select * from console where 1");
 			$sql->execute();
 
 			foreach($sql as $order)
@@ -112,73 +106,70 @@
 				// gegevens uit de array in het object stoppen
 				// en gelijk afdrukken
 				echo "<p>";
-				echo $order["verkOrdid"]. " - ";		// geen eigenschap van object
-				echo $this->consoleid=$order["consoleid"]. " - ";
+				echo $order["consoleid"]. " - ";		// geen eigenschap van object
 				$this->consolenaam = $order["consolenaam"];
 				echo $this->consolenaam. " - ";
 				$this->consoleprijs=$order["consoleprijs"];
 				echo $this->consoleprijs. " - ";
 				$this->consoletype=$order["consoletype"];
 				echo $this->consoletype. " - ";
-				$this->verkOrdstatus=$order["verkOrdstatus"];
-				echo $this->verkOrdstatus. "<br/><br>"; 
+				 
 				echo "</p>";
 				
 			}
 		}
 		
-        public function updateorder($verkOrdid)
-		{
-			require "Connectschool.php";
-			// gegevens uit het object in variabelen zetten 
-            $verkOrdid;
-			$consoleid;
-            $consolenaam;             
-			$consoleprijs 		= $this->getconsoleprijs();
-			$consoletype 		= $this->getconsoletype();
-			$verkOrdstatus 		= $this->getverkOrdstatus();
-			
-			// statement maken
-			$sql = $conn->prepare("
-			update verkooporders
-										set  consoleid=:consoleid, consolenaam=:consolenaam, consoleprijs=:consoleprijs, consoletype=:consoletype, verkOrdstatus=:verkOrdstatus
-										where verkOrdid=:verkOrdid
-								 ");
-			// variabelen in de statement zetten
-			$sql->bindParam(":verkOrdid", $verkOrdid);
-			$sql->bindParam(":consoleid", $consoleid);
-			$sql->bindParam(":consolenaam", $consolenaam);
-			$sql->bindParam(":consoleprijs", $consoleprijs);
-			$sql->bindParam(":consoletype", $consoletype);
-			$sql->bindParam(":verkOrdstatus", $verkOrdstatus);
-			$sql->execute();
-		}
+        public function updateorder($consoleid)
+{
+    require "Connectschool.php";
+    
+    // Retrieve data from the object and assign them to variables
+    $consolenaam = $this->getconsolenaam();
+    $consoleprijs = $this->getconsoleprijs();
+    $consoletype = $this->getconsoletype();
+    
+    // Prepare the SQL statement
+    $sql = $conn->prepare("
+        UPDATE console
+        SET consolenaam=:consolenaam, consoleprijs=:consoleprijs, consoletype=:consoletype
+        WHERE consoleid=:consoleid
+    ");
+    
+    // Bind variables to the statement parameters
+    $sql->bindParam(":consoleid", $consoleid);
+    $sql->bindParam(":consolenaam", $consolenaam);
+    $sql->bindParam(":consoleprijs", $consoleprijs);
+    $sql->bindParam(":consoletype", $consoletype);
+    
+    // Execute the statement
+    $sql->execute();
+}
 
 		
-		public function deleteorder($verkOrdid)
+		public function deleteorder($consoleid)
 		{
 			require "Connectschool.php";
 			// statement maken
 			$sql = $conn->prepare("
-									delete from verkooporders
-									where verkOrdid = :verkOrdid
+									delete from console
+									where consoleid = :consoleid
 								 ");
 			// variabele in de statement zetten
-			$sql->bindParam(":verkOrdid", $verkOrdid);
+			$sql->bindParam(":consoleid", $consoleid);
 			$sql->execute();
 		}
-		public function searchorder($verkOrdid) 
+		public function searchorder($consoleid) 
 		{
 			require "connectSchool.php";
 
 			// statement maken
 			$sql = $conn->prepare("
 									select *
-									from verkooporders
-									where verkOrdid = :verkOrdid			
+									from console
+									where consoleid = :consoleid			
 								 ");
 			// variabele in de stament zetten
-			$sql->bindParam(":verkOrdid", $verkOrdid);
+			$sql->bindParam(":consoleid", $consoleid);
 			$sql->execute();
 
 			// gegevens uit de array in het object stoppen
@@ -186,16 +177,13 @@
 			{			
 				
 				echo "<p>";
-				echo $order["verkOrdid"]. " - ";		// geen eigenschap van object
-				echo $this->consoleid=$order["consoleid"]. " - ";
+				echo $order["consoleid"]. " - ";		// geen eigenschap van object
 				$this->consolenaam = $order["consolenaam"];
 				echo $this->consolenaam. " - ";
 				$this->consoleprijs=$order["consoleprijs"];
 				echo $this->consoleprijs. " - ";
 				$this->consoletype=$order["consoletype"];
 				echo $this->consoletype. " - ";
-				$this->verkOrdstatus=$order["verkOrdstatus"];
-				echo $this->verkOrdstatus. "<br/><br>"; 
 				echo "</p>";
 			}
 		}

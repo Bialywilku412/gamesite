@@ -36,22 +36,21 @@
 		
 		<?php
 			require "order.php";
-
-            // gegevens uit de array in variabelen stoppen
-		    $verkOrdid = $_POST["verkOrdidvak"];
-			$consoleid = $_POST["consoleidvak"];
+ // gegevens uit de array in variabelen stoppen
+            $consoleid = $_POST["consoleidvak"];
 			$consolenaam = $_POST["consolenaamvak"];
 			$consoleprijs = $_POST["consoleprijsvak"];
             $consoletype = $_POST["consoletypevak"];
-            $verkOrdstatus = $_POST["verkOrdstatusvak"];
+    
         
            
 			
             // maken object ---------------------------------------------------
-			$order = new order($consoleid, $consolenaam, $consoleprijs, $consoletype, $verkOrdstatus);
-			$order->updateorder($verkOrdid);		           
+			$order = new order($consolenaam, $consoleprijs, $consoletype);      
+            $order->updateorder($consoleid);
             echo "Dit zijn de gewijzigde gegevens: <br/>";
-            echo $verkOrdid."<br/>";
+            echo $consoleid."<br/>";
+          
 		?>
 	   <a href="home.php"><br/>Terug naar het hoofdmenu</a>
 	</body>

@@ -36,15 +36,15 @@
 		<?php
 			
 			require "order.php";					// nodig om object te maken
-			$orderid = $_POST["verkOrdidvak"];	// uitlezen vakje van klant 
+			$orderid = $_POST["consoleidvak"];	// uitlezen vakje van klant 
 			$order = new order();				// object aanmaken
 			$order->searchorder($orderid);	
+            
 			// properties in variabelen zetten
-			$consoleid=$order->getconsoleid();
 			$consolenaam=$order->getconsolenaam();
 			$consoleprijs=$order->getconsoleprijs();
 			$consoletype=$order->getconsoletype();
-            $verkOrdstatus=$order->getverkOrdstatus();
+       
 		
             
             
@@ -53,12 +53,9 @@
 		<form class="contact-form" action="updateconsoleFormulier3.php" method="post">
 			<!-- $klant mag niet meer gewijzigd worden -->
             <?php echo $orderid ?>
-            <input type="hidden"  class="contact-form-text" name="verkOrdidvak" value="<?php echo $orderid; ?> ">
-            <input type="text"    class="contact-form-text" name="consoleidvak"      value="<?php echo $consoleid;      ?> ">
             <input type="text"    class="contact-form-text" name="consolenaamvak" value="<?php echo $consolenaam; ?> ">
 			<input type="text"    class="contact-form-text" name="consoleprijsvak" value="<?php echo $consoleprijs; ?> ">
             <input type="text"    class="contact-form-text" name="consoletypevak"  value="<?php echo $consoletype;  ?> ">
-            <input type="text"    class="contact-form-text" name="verkOrdstatusvak"  value="<?php echo $verkOrdstatus;  ?> ">
 			<input type="submit"  class="contatct-form-btn" value="Verstuur"><br/><br/>
 		</form>
 
