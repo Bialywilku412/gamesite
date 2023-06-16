@@ -27,13 +27,11 @@
 <div class="h33">
     <div class="img">
     <img src="xgames.png" alt="Bedrijf foto" width="200">
-    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="Home.php" class="nav-link px-2 text-white">Home</a></li>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="Home.php" class="nav-link px-2 text-white">Home</a></li>
                         <li><a href="games.php" class="nav-link px-2 text-white">games</a></li>
                         <li><a href="leverancier.php" class="nav-link px-2 text-white">leverancier</a></li>
                         <li><a href="console.php"class="nav-link px-2 text-white">console</a></li>
-                    
-                       
                 </ul>
 </div>
 
