@@ -50,8 +50,6 @@
     </div>
     <div class="contact-section">
       <h1> </h1>
-
-<<<<<<< HEAD
   <form class="contact-form" action="createconsoleForm2.php" method="post">
 
     <label>
@@ -63,29 +61,9 @@
     <label>
       <input type="text"  id = "consoletypevak" class="contact-form-text" placeholder=" consoletype"name="consoletypevak"><br/>
     </label>
-=======
-      <form class="contact-form" action="createconsoleForm2.php" method="post">
-        <label>
-          <input type="text" id="klantidvak" class="contact-form-text" placeholder="klantid" name="klantidvak"><br />
-        </label>
-        <label>
-          <input type="text" id="artidvak" class="contact-form-text" placeholder="artid" name="artidvak"><br />
-        </label>
-        <label>
-          <input type="text" id="verkOrdDatumvak" class="contact-form-text" placeholder="verkOrdDatum"
-            name="verkOrdDatumvak"><br />
-        </label>
-        <label>
-          <input type="text" id="verOrdBestAantalvak" class="contact-form-text" placeholder=" verOrdBestAantal"
-            name="verOrdBestAantalvak"><br />
-        </label>
-        <label>
-          <input type="text" id="verkOrdstatusvak" class="contact-form-text" placeholder="verkOrdstatus"
-            name="verkOrdstatusvak"><br />
-        </label>
-        </label>
+
         <input type="submit" class="contatct-form-btn" value="Verstuur">
->>>>>>> d9da44980755eff565072d7b50ecb8a2c46be621
+
 
       </form>
     </div>

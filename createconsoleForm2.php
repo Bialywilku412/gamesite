@@ -31,7 +31,7 @@
                 </div>
         </header>
         <div class="h33">
-<<<<<<< HEAD
+
         <?php
 			require "order.php";
 			require "connectSchool.php";
