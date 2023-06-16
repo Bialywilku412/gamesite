@@ -50,21 +50,18 @@
 
   <form class="contact-form" action="createconsoleForm2.php" method="post">
   <label>
-      <input type="text" id = "klantidvak" class="contact-form-text" placeholder="klantid" name="klantidvak"><br/>
+      <input type="text" id = "consoleidvak" class="contact-form-text" placeholder="consoleid" name="consoleidvak"><br/>
     </label>
     <label>
-      <input type="text" id = "artidvak" class="contact-form-text" placeholder="artid" name="artidvak"><br/>
+      <input type="text" id = "consolenaamvak" class="contact-form-text" placeholder="consolenaam" name="consolenaamvak"><br/>
     </label>
     <label>
-      <input type="text" id = "verkOrdDatumvak" class="contact-form-text" placeholder="verkOrdDatum" name="verkOrdDatumvak"><br/>
+      <input type="text" id = "consoleprijsvak" class="contact-form-text" placeholder="consoleprijs" name="consoleprijsvak"><br/>
     </label>
     <label>
-      <input type="text"  id = "verOrdBestAantalvak" class="contact-form-text" placeholder=" verOrdBestAantal"name="verOrdBestAantalvak"><br/>
+      <input type="text"  id = "consoletypevak" class="contact-form-text" placeholder=" consoletype"name="consoletypevak"><br/>
     </label>
-    <label>
-      <input type="text"  id = "verkOrdstatusvak" class="contact-form-text" placeholder="verkOrdstatus" name="verkOrdstatusvak"><br/>
-    </label>
-    </label>
+
     <input type="submit" class="contatct-form-btn" value="Verstuur">
 
   </form>

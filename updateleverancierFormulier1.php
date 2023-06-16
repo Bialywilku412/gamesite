@@ -36,8 +36,8 @@
   <h1>     </h1>
 
   <form class="contact-form" action="updateleverancierFormulier2.php" method="post">
-			<label for="klantid"></label>
-			<input type="text" id = "klantid" class="contact-form-text" name="klantidvak" placeholder="klantidvak">
+			<label for="consoleid"></label>
+			<input type="text" id = "consoleid" class="contact-form-text" name="consoleidvak" placeholder="consoleidvak">
 			<input type="submit" class="contatct-form-btn" value="Verstuur">		
 		</form>
 

@@ -37,14 +37,14 @@
 		<?php
 			require "artikel.php";
 
-		    $artid = $_POST["artidvak"];
+		    $consolenaam = $_POST["consolenaamvak"];
 			$verwijderen = $_POST["verwijderBox"];
 			
 			if ($verwijderen=="ja")
 			{
 				echo "De artikel is verwijderd <br/>";
 				$artikel1 =  new artikel();
-				$artikel1->deleteartikel($artid);
+				$artikel1->deleteartikel($consolenaam);
 			}
 			else
 			{

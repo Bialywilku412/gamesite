@@ -4,46 +4,40 @@
 	class verkooporders
 	{
 		// properties - eigenschappen --------------------
-		protected string $verkOrdDatum;
-		protected string $verOrdBestAantal;
-		protected string $verkOrdstatus;
+		protected string $consoleprijs;
+		protected string $consoletype;
+		
 	
 		// methoden - functies ----------------------------
 		// constructor
-		function __construct($verkOrdDatum=NULL, $verOrdBestAantal=NULL)
+		function __construct($consoleprijs=NULL, $consoletype=NULL)
 		{
-			$this->verkOrdDatum=$verkOrdDatum;
-			$this->verOrdBestAantal=$verOrdBestAantal;
+			$this->consoleprijs=$consoleprijs;
+			$this->consoletype=$consoletype;
 		}
 
 		// setters
-		public function setverkOrdDatum($verkOrdDatum)
+		public function setconsoleprijs($consoleprijs)
 		{
-			$this->verkOrdDatum=$verkOrdDatum;
+			$this->consoleprijs=$consoleprijs;
 		}
-		public function setverOrdBestAantal($verOrdBestAantal)
+		public function setconsoletype($consoletype)
 		{
-			$this->verOrdBestAantal=$verOrdBestAantal;
+			$this->consoletype=$consoletype;
 		}
-		public function setverkOrdstatus($verkOrdstatus)
-		{
-			$this->verkOrdstatus=$verkOrdstatus;
-		}
+		
 		
 		
 		// getters
-		public function getverkOrdDatum()
+		public function getconsoleprijs()
 		{
-			return $this->verkOrdDatum;
+			return $this->consoleprijs;
 		}
-	    public function getverOrdBestAantal()
+	    public function getconsoletype()
 		{
-			return $this->verOrdBestAantal;
+			return $this->consoletype;
 		}
-		public function getverkOrdstatus()
-		{
-			return $this->verkOrdstatus;
-		}
+		
 		
 	}	
 ?>

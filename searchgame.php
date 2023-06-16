@@ -46,7 +46,7 @@
 
 <div class="contact-section">
     <form class="contact-form" action="searchgame2.php" method="post">
-            <input type="text" class="contact-form-text" placeholder="artidvak" name="artidvak">
+            <input type="text" class="contact-form-text" placeholder="consolenaamvak" name="consolenaamvak">
             <input type="submit" class="contatct-form-btn" value="Verstuur">
 
     </form>

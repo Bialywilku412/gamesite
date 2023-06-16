@@ -4,82 +4,72 @@
 	class order 
 	{
 		// properties - eigenschappen -------------------
-		protected string $klantid;
-		protected string $artid;
-		protected string $verkOrdDatum;
-		protected string $verOrdBestAantal;
-		protected string $verkOrdstatus;
+		protected string $consoleid;
+		protected string $consolenaam;
+		protected string $consoleprijs;
+		protected string $consoletype;
+		
 
 		// methoden - functies -------------------
 		// constructor
-		function __construct($klantid="", $artid="", $verkOrdDatum="", $verOrdBestAantal="", $verkOrdstatus="")
+		function __construct($consoleid="", $consolenaam="", $consoleprijs="", $consoletype="")
 		{
-			$this->klantid=$klantid;
-			$this->artid=$artid;
-			$this->verkOrdDatum=$verkOrdDatum;
-			$this->verOrdBestAantal=$verOrdBestAantal;
-			$this->verkOrdstatus=$verkOrdstatus;
+			$this->consoleid=$consoleid;
+			$this->consolenaam=$consolenaam;
+			$this->consoleprijs=$consoleprijs;
+			$this->consoletype=$consoletype;
+			
         }
 
 		// setters
-		public function setklantid($klantid)
+		public function setconsoleid($consoleid)
 		{
-			$this->klantid=$klantid;
+			$this->consoleid=$consoleid;
 		}
-		public function setartid($artid)
+		public function setconsolenaam($consolenaam)
 		{
-			$this->artid=$artid;
+			$this->consolenaam=$consolenaam;
 		}
-		public function setverkOrdDatum($verkOrdDatum)
+		public function setconsoleprijs($consoleprijs)
 		{
-			$this->verkOrdDatum=$verkOrdDatum;
+			$this->consoleprijs=$consoleprijs;
 		}
-		public function setverOrdBestAantal($verOrdBestAantal)
+		public function setconsoletype($consoletype)
 		{
-			$this->verOrdBestAantal=$verOrdBestAantal;
+			$this->consoletype=$consoletype;
 		}
-		public function setverkOrdstatus($verkOrdstatus)
-		{
-			$this->verkOrdstatus=$verkOrdstatus;
-		}
+		
 	
 		// getters
-		public function getklantid()
+		public function getconsoleid()
 		{
-			return $this->klantid;
+			return $this->consoleid;
 		}
-		public function getartid()
+		public function getconsolenaam()
 		{
-			return $this->artid;
+			return $this->consolenaam;
 		}
-		public function getverkOrdDatum()
+		public function getconsoleprijs()
 		{
-			return $this->verkOrdDatum;
+			return $this->consoleprijs;
 		}
-		public function getverOrdBestAantal()
+		public function getconsoletype()
 		{
-			return $this->verOrdBestAantal;
-		}	
-
-		public function getverkOrdstatus()
-		{
-			return $this->verkOrdstatus;
+			return $this->consoletype;
 		}	
 		
 			public function afdrukken()
 		{
 
 			// afdrukken object -------------------
-			echo $this->getklantid();
+			echo $this->getconsoleid();
 			echo "<br/>";
-			echo $this->getartid();
+			echo $this->getconsolenaam();
 			echo "<br/>";
-			echo $this->getverkOrdDatum();
+			echo $this->getconsoleprijs();
 			echo "<br/>";
-			echo $this->getverOrdBestAantal();
+			echo $this->getconsoletype();
 			echo "<br/>";
-			echo $this->getverkOrdstatus();
-			echo "<br/>";		
 					echo "<br/><br/>";
 		}
 
@@ -87,27 +77,25 @@
         public function createorder(){
 			require "connectSchool.php";
 
-			// gegevens naar variabelen
-			$verkOrdid = NULL;
-			$klantid = $this->getklantid();
-			$artid	 = $this->getartid();
-			$verkOrdDatum = $this->getverkOrdDatum();
-			$verOrdBestAantal = $this->getverOrdBestAantal();
-			$verkOrdstatus = $this->getverkOrdstatus();
+			// gegevens naar variabele
+			$consoleid = $this->getconsoleid();
+			$consolenaam	 = $this->getconsolenaam();
+			$consoleprijs = $this->getconsoleprijs();
+			$consoletype = $this->getconsoletype();
+			
 			
 			// sql
 			$sql = $conn->prepare("
-			insert into verkooporders values 
-				(:verkOrdid, :klantid, :artid, :verkOrdDatum, :verOrdBestAantal, :verkOrdstatus);
+			insert into console values 
+				( :consoleid, :consolenaam, :consoleprijs, :consoletype);
 			");
 
 			// variabelen in de statement
-			$sql->bindParam(":verkOrdid", $verkOrdid);
-			$sql->bindParam(":klantid", $klantid);
-			$sql->bindParam(":artid", $artid);
-			$sql->bindParam(":verkOrdDatum", $verkOrdDatum);
-			$sql->bindParam(":verOrdBestAantal", $verOrdBestAantal);
-			$sql->bindParam(":verkOrdstatus", $verkOrdstatus);
+			$sql->bindParam(":consoleid", $consoleid);
+			$sql->bindParam(":consolenaam", $consolenaam);
+			$sql->bindParam(":consoleprijs", $consoleprijs);
+			$sql->bindParam(":consoletype", $consoletype);
+			
 			$sql->execute();
 			echo "Toegevoegd aan de database <br>";
 
@@ -125,13 +113,13 @@
 				// en gelijk afdrukken
 				echo "<p>";
 				echo $order["verkOrdid"]. " - ";		// geen eigenschap van object
-				echo $this->klantid=$order["klantid"]. " - ";
-				$this->artid = $order["artid"];
-				echo $this->artid. " - ";
-				$this->verkOrdDatum=$order["verkOrdDatum"];
-				echo $this->verkOrdDatum. " - ";
-				$this->verOrdBestAantal=$order["verOrdBestAantal"];
-				echo $this->verOrdBestAantal. " - ";
+				echo $this->consoleid=$order["consoleid"]. " - ";
+				$this->consolenaam = $order["consolenaam"];
+				echo $this->consolenaam. " - ";
+				$this->consoleprijs=$order["consoleprijs"];
+				echo $this->consoleprijs. " - ";
+				$this->consoletype=$order["consoletype"];
+				echo $this->consoletype. " - ";
 				$this->verkOrdstatus=$order["verkOrdstatus"];
 				echo $this->verkOrdstatus. "<br/><br>"; 
 				echo "</p>";
@@ -144,24 +132,24 @@
 			require "Connectschool.php";
 			// gegevens uit het object in variabelen zetten 
             $verkOrdid;
-			$klantid;
-            $artid;             
-			$verkOrdDatum 		= $this->getverkOrdDatum();
-			$verOrdBestAantal 		= $this->getverOrdBestAantal();
+			$consoleid;
+            $consolenaam;             
+			$consoleprijs 		= $this->getconsoleprijs();
+			$consoletype 		= $this->getconsoletype();
 			$verkOrdstatus 		= $this->getverkOrdstatus();
 			
 			// statement maken
 			$sql = $conn->prepare("
 			update verkooporders
-										set  klantid=:klantid, artid=:artid, verkOrdDatum=:verkOrdDatum, verOrdBestAantal=:verOrdBestAantal, verkOrdstatus=:verkOrdstatus
+										set  consoleid=:consoleid, consolenaam=:consolenaam, consoleprijs=:consoleprijs, consoletype=:consoletype, verkOrdstatus=:verkOrdstatus
 										where verkOrdid=:verkOrdid
 								 ");
 			// variabelen in de statement zetten
 			$sql->bindParam(":verkOrdid", $verkOrdid);
-			$sql->bindParam(":klantid", $klantid);
-			$sql->bindParam(":artid", $artid);
-			$sql->bindParam(":verkOrdDatum", $verkOrdDatum);
-			$sql->bindParam(":verOrdBestAantal", $verOrdBestAantal);
+			$sql->bindParam(":consoleid", $consoleid);
+			$sql->bindParam(":consolenaam", $consolenaam);
+			$sql->bindParam(":consoleprijs", $consoleprijs);
+			$sql->bindParam(":consoletype", $consoletype);
 			$sql->bindParam(":verkOrdstatus", $verkOrdstatus);
 			$sql->execute();
 		}
@@ -199,13 +187,13 @@
 				
 				echo "<p>";
 				echo $order["verkOrdid"]. " - ";		// geen eigenschap van object
-				echo $this->klantid=$order["klantid"]. " - ";
-				$this->artid = $order["artid"];
-				echo $this->artid. " - ";
-				$this->verkOrdDatum=$order["verkOrdDatum"];
-				echo $this->verkOrdDatum. " - ";
-				$this->verOrdBestAantal=$order["verOrdBestAantal"];
-				echo $this->verOrdBestAantal. " - ";
+				echo $this->consoleid=$order["consoleid"]. " - ";
+				$this->consolenaam = $order["consolenaam"];
+				echo $this->consolenaam. " - ";
+				$this->consoleprijs=$order["consoleprijs"];
+				echo $this->consoleprijs. " - ";
+				$this->consoletype=$order["consoletype"];
+				echo $this->consoletype. " - ";
 				$this->verkOrdstatus=$order["verkOrdstatus"];
 				echo $this->verkOrdstatus. "<br/><br>"; 
 				echo "</p>";

@@ -43,7 +43,7 @@
 			require "Connectschool.php";	// verbinding maken database
 			
 			// uitlezen vakje van searchStudentForm1 -------------------------
-			$artikelid = $_POST["artidvak"];
+			$artikelid = $_POST["consolenaamvak"];
 			$artikel = new artikel(); // maakt object
 			$artikel->searchartikel($artikelid);
 	

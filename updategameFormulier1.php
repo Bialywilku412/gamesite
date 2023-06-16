@@ -33,7 +33,7 @@
 <div class="h33">
 		<h1>update game formulier </h1>
 		<form class="contact-form" action="updategameFormulier2.php" method="post">
-			<input type="text" id = "artid"class="contact-form-text" name="artidvak" placeholder="artid">
+			<input type="text" id = "consolenaam"class="contact-form-text" name="consolenaamvak" placeholder="consolenaam">
 			<input type="submit" class="contatct-form-btn" value="Verstuur"><br/><br/>
 		</form>
         <a href="home.php"><br/>Terug naar het hoofdmenu</a>

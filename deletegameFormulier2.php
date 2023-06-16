@@ -34,15 +34,15 @@
 		<?php
 			// Anjo Eijeriks
 			require "artikel.php";					// nodig om object te maken
-			$artid = $_POST["artidvak"];	// uitlezen vakje van klant 
+			$consolenaam = $_POST["consolenaamvak"];	// uitlezen vakje van klant 
 			$artikel1 = new artikel();				// object aanmaken
-			$artikel1->searchartikel($artid);	
+			$artikel1->searchartikel($consolenaam);	
 			
 		?>
 		
 		<form class="contact-form" action="deletegameFormulier3.php" method="post">
 			<!-- $klant mag niet meer gewijzigd worden -->
-			<input type="hidden"  class="contact-form-text" name="artidvak" value=" <?php echo $artid ?> ">
+			<input type="hidden"  class="contact-form-text" name="consolenaamvak" value=" <?php echo $consolenaam ?> ">
 			<!-- 2x verwijderBox om nee of ja door te kunnen geven -->
 			<input type="hidden" 	name="verwijderBox" value="nee">			
 			<input type="checkbox" 	name="verwijderBox" value="ja">

@@ -114,7 +114,7 @@
 			require "connectSchool.php";
 
 			// gegevens naar variabelen
-			$artid = NULL;
+			$consolenaam = NULL;
 			$artOmschrijving = $this->getartOmschrijving();
 			$artinkoop = $this->getartinkoop();
 			$artverkoop = $this->getartverkoop();
@@ -126,12 +126,12 @@
 			// sql
 			$sql = $conn->prepare("
 			insert into artikelen values 
-				( :artid, :artOmschrijving, :artinkoop, :artverkoop, :artvoorraad, :artminvoorraad, :artmaxvoorraad, :artLocatie);
+				( :consolenaam, :artOmschrijving, :artinkoop, :artverkoop, :artvoorraad, :artminvoorraad, :artmaxvoorraad, :artLocatie);
 			");
 			
 
 			// variabelen in de statement
-			$sql->bindParam(":artid", $artid);
+			$sql->bindParam(":consolenaam", $consolenaam);
 			$sql->bindParam(":artOmschrijving", $artOmschrijving);
 			$sql->bindParam(":artinkoop", $artinkoop);
 			$sql->bindParam(":artverkoop", $artverkoop);
@@ -154,7 +154,7 @@
 				// gegevens uit de array in het object stoppen
 				// en gelijk afdrukken
 				echo "<p>";
-				echo $artikel["artid"]. " - ";		// geen eigenschap van object
+				echo $artikel["consolenaam"]. " - ";		// geen eigenschap van object
 				echo $this->artOmschrijving=$artikel["artOmschrijving"]. " - ";
 				$this->artinkoop = $artikel["artInkoop"];
 				echo $this->artinkoop. " - ";
@@ -172,11 +172,11 @@
 				
 			}
 		}
-        public function updateartikel($artid)
+        public function updateartikel($consolenaam)
 		{
 			require "Connectschool.php";
 			// gegevens uit het object in variabelen zetten 
-			$artid;
+			$consolenaam;
 			$artOmschrijving 		= $this->getartOmschrijving();
 			$artinkoop 		= $this->getartinkoop();
 			$artverkoop 		= $this->getartverkoop();
@@ -188,10 +188,10 @@
 			$sql = $conn->prepare("
 			update artikelen
 						set artOmschrijving=:artOmschrijving, artinkoop=:artinkoop, artverkoop=:artverkoop, artvoorraad=:artvoorraad, artminvoorraad=:artminvoorraad, artmaxvoorraad=:artmaxvoorraad, artLocatie=:artLocatie
-						where artid=:artid
+						where consolenaam=:consolenaam
 								 ");
 			// variabelen in de statement zetten
-			$sql->bindParam(":artid", $artid);
+			$sql->bindParam(":consolenaam", $consolenaam);
 			$sql->bindParam(":artOmschrijving", $artOmschrijving);
 			$sql->bindParam(":artinkoop", $artinkoop);
 			$sql->bindParam(":artverkoop", $artverkoop);
@@ -203,20 +203,20 @@
 		}
 
 		
-        public function deleteartikel($artid)
+        public function deleteartikel($consolenaam)
 		{
 			require "Connectschool.php";
 			// statement maken
 			$sql = $conn->prepare("
 									delete from artikelen
-									where artid = :artid
+									where consolenaam = :consolenaam
 								 ");
 			// variabele in de statement zetten
-			$sql->bindParam(":artid", $artid);
+			$sql->bindParam(":consolenaam", $consolenaam);
 			$sql->execute();
 		}
 
-        public function searchartikel($artid) 
+        public function searchartikel($consolenaam) 
 		{
 			require "connectSchool.php";
 
@@ -224,10 +224,10 @@
 			$sql = $conn->prepare("
 									select *
 									from artikelen
-									where artid = :artid			
+									where consolenaam = :consolenaam			
 								 ");
 			// variabele in de stament zetten
-			$sql->bindParam(":artid", $artid);
+			$sql->bindParam(":consolenaam", $consolenaam);
 			$sql->execute();
 
 			// gegevens uit de array in het object stoppen
@@ -235,7 +235,7 @@
 			{			
 				
 				echo "<p>";
-				echo $artikel["artid"]. " - ";		// geen eigenschap van object
+				echo $artikel["consolenaam"]. " - ";		// geen eigenschap van object
 				echo $this->artOmschrijving=$artikel["artOmschrijving"]. " - ";
 				$this->artinkoop = $artikel["artInkoop"];
 				echo $this->artinkoop. " - ";

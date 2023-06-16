@@ -39,16 +39,16 @@
 
             // gegevens uit de array in variabelen stoppen
 		    $verkOrdid = $_POST["verkOrdidvak"];
-			$klantid = $_POST["klantidvak"];
-			$artid = $_POST["artidvak"];
-			$verkOrdDatum = $_POST["verkOrdDatumvak"];
-            $verOrdBestAantal = $_POST["verOrdBestAantalvak"];
+			$consoleid = $_POST["consoleidvak"];
+			$consolenaam = $_POST["consolenaamvak"];
+			$consoleprijs = $_POST["consoleprijsvak"];
+            $consoletype = $_POST["consoletypevak"];
             $verkOrdstatus = $_POST["verkOrdstatusvak"];
         
            
 			
             // maken object ---------------------------------------------------
-			$order = new order($klantid, $artid, $verkOrdDatum, $verOrdBestAantal, $verkOrdstatus);
+			$order = new order($consoleid, $consolenaam, $consoleprijs, $consoletype, $verkOrdstatus);
 			$order->updateorder($verkOrdid);		           
             echo "Dit zijn de gewijzigde gegevens: <br/>";
             echo $verkOrdid."<br/>";

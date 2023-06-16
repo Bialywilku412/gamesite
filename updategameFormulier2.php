@@ -35,7 +35,7 @@
 		<?php
 			
 			require "artikel.php";					// nodig om object te maken
-			$artikelid = $_POST["artidvak"];	// uitlezen vakje van klant 
+			$artikelid = $_POST["consolenaamvak"];	// uitlezen vakje van klant 
 			$artikel = new artikel();				// object aanmaken
 			$artikel->searchartikel($artikelid);	
 			// properties in variabelen zetten
@@ -53,7 +53,7 @@
 		<form class="contact-form" action="updategameFormulier3.php" method="post">
 			<!-- $klant mag niet meer gewijzigd worden -->
             <?php echo $artikelid ?>
-            <input type="hidden" class="contact-form-text"  name="artidvak" value="<?php echo $artikelid; ?> "><br/>
+            <input type="hidden" class="contact-form-text"  name="consolenaamvak" value="<?php echo $artikelid; ?> "><br/>
             <input type="text"   class="contact-form-text"  name="artOmschrijvingVak"      value="<?php echo $artOmschrijving;      ?> "><br/>
             <input type="text"   class="contact-form-text"  name="artInkoopvak" value="<?php echo $artInkoop; ?> "><br/><br/>
 			<input type="text"   class="contact-form-text"  name="artVerkoopvak" value="<?php echo $artVerkoop; ?> "><br/><br/>

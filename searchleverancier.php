@@ -44,7 +44,7 @@
 
 <div class="contact-section">
     <form class="contact-form" action="searchleverancier2.php" method="post">
-            <input type="text" class="contact-form-text" placeholder="klantidvak" name="klantidvak">
+            <input type="text" class="contact-form-text" placeholder="consoleidvak" name="consoleidvak">
             <input type="submit" class="contatct-form-btn" value="Verstuur">
 
     </form>

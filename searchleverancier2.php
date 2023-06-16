@@ -43,9 +43,9 @@
 			require "Connectschool.php";	// verbinding maken database
 			
 			// uitlezen vakje van searchStudentForm1 -------------------------
-			$klantid = $_POST["klantidvak"];
+			$consoleid = $_POST["consoleidvak"];
 			$klant1 = new klant(); // maakt object
-			$klant1->searchklant($klantid);
+			$klant1->searchklant($consoleid);
 	
 		?>
         <br/>

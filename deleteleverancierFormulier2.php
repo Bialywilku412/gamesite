@@ -37,15 +37,15 @@
 		<?php
 			// Anjo Eijeriks
 			require "klant.php";					// nodig om object te maken
-			$klantid = $_POST["klantidvak"];	// uitlezen vakje van klant 
+			$consoleid = $_POST["consoleidvak"];	// uitlezen vakje van klant 
 			$klant1 = new klant();				// object aanmaken
-			$klant1->searchklant($klantid);	
+			$klant1->searchklant($consoleid);	
 			
 		?>
 		
 		<form class="contact-form" action="deleteleverancierFormulier3.php" method="post">
 			<!-- $klant mag niet meer gewijzigd worden -->
-			<input type="hidden" name="klantidvak" value=" <?php echo $klantid ?> ">
+			<input type="hidden" name="consoleidvak" value=" <?php echo $consoleid ?> ">
 			<!-- 2x verwijderBox om nee of ja door te kunnen geven -->
 			<input type="hidden" 	name="verwijderBox" value="nee">			
 			<input type="checkbox" 	name="verwijderBox" value="ja">

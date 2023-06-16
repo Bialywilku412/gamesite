@@ -38,7 +38,7 @@
 			require "klant.php";
 
             // gegevens uit de array in variabelen stoppen
-		    $klantid = $_POST["klantidvak"];
+		    $consoleid = $_POST["consoleidvak"];
 			$naam = $_POST["naamVak"];
 			$email = $_POST["emailvak"];
 			$adres = $_POST["adresvak"];
@@ -48,9 +48,9 @@
 			
             // maken object ---------------------------------------------------
 			$klant1 = new klant($naam, $email, $adres, $postcode, $woonplaats);
-			$klant1->updateklant($klantid);		           
+			$klant1->updateklant($consoleid);		           
             echo "Dit zijn de gewijzigde gegevens: <br/>";
-            echo $klantid."<br/>";
+            echo $consoleid."<br/>";
 		?>
 		   <a href="home.php"><br/>Terug naar het hoofdmenu</a>
 		</div>

@@ -35,8 +35,8 @@
 	<div class="h33">
 		<h1>delete klant formulier 1</h1>
 			<form class="contact-form" action="deleteleverancierFormulier2.php" method="post">
-			<label for="klantid">klantid:</label>
-			<input type="text" id = "klantid" class="contact-form-text" name="klantidvak">
+			<label for="consoleid">consoleid:</label>
+			<input type="text" id = "consoleid" class="contact-form-text" name="consoleidvak">
 			<input class="contatct-form-btn"  type="submit">
 		</form>
         <a href="home.php"><br/>Terug naar het hoofdmenu</a>

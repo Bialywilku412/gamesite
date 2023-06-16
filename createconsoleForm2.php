@@ -32,14 +32,14 @@
 			require "order.php";
 			require "connectSchool.php";
 			// uitlezen vakjes van createStudentForm1
-			$klantid=$_POST["klantidvak"];
-            $artid=$_POST["artidvak"];
-            $verkOrdDatum=$_POST["verkOrdDatumvak"];
-			$verOrdBestAantal=$_POST["verOrdBestAantalvak"];
-			$verkOrdstatus=$_POST["verkOrdstatusvak"];
+			$consoleidvak=$_POST["consoleidvak"];
+            $consolenaamvak=$_POST["consolenaamvak"];
+            $consoleprijsvak=$_POST["consoleprijsvak"];
+			$consoletypevak=$_POST["consoletypevak"];
+			
            
 			// maken object -----------------------
-			$order = new order($klantid, $artid, $verkOrdDatum, $verOrdBestAantal, $verkOrdstatus);
+			$order = new order($consoleidvak, $consolenaamvak, $consoleprijsvak, $consoletypevak);
 			
 			// In d->createorder();
             $order->createorder();

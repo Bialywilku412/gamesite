@@ -36,9 +36,9 @@
 		<?php
 			// Anjo Eijeriks
 			require "klant.php";					// nodig om object te maken
-			$klantid = $_POST["klantidvak"];	// uitlezen vakje van klant 
+			$consoleid = $_POST["consoleidvak"];	// uitlezen vakje van klant 
 			$klant1 = new klant();				// object aanmaken
-			$klant1->searchklant($klantid);	
+			$klant1->searchklant($consoleid);	
 			// properties in variabelen zetten
 			$naam=$klant1->getnaam();
 			$email=$klant1->getemail();
@@ -50,8 +50,8 @@
 	</div>
 		<form class="contact-form" action="updateleverancierFormulier3.php"method="post">
 			<!-- $klant mag niet meer gewijzigd worden -->
-            <?php echo $klantid ?>
-            <input type="hidden" class="contact-form-text" name="klantidvak" value="<?php echo $klantid; ?> ">
+            <?php echo $consoleid ?>
+            <input type="hidden" class="contact-form-text" name="consoleidvak" value="<?php echo $consoleid; ?> ">
             <input type="text"   class="contact-form-text" name="naamVak"      value="<?php echo $naam;      ?> ">
             <input type="text"   class="contact-form-text" name="emailvak" value="<?php echo $email; ?> ">
 			<input type="text"   class="contact-form-text" name="adresvak" value="<?php echo $adres; ?> ">

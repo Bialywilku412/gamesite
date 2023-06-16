@@ -37,7 +37,7 @@
 			require "artikel.php";
 
             // gegevens uit de array in variabelen stoppen
-		    $artid = $_POST["artidvak"];
+		    $consolenaam = $_POST["consolenaamvak"];
 			$artOmschrijving = $_POST["artOmschrijvingVak"];
 			$artInkoop = $_POST["artInkoopvak"];
 			$artVerkoop = $_POST["artVerkoopvak"];
@@ -49,9 +49,9 @@
 			
             // maken object ---------------------------------------------------
 			$artikel = new artikel($artOmschrijving, $artInkoop, $artVerkoop, $artVoorraad, $artMinVoorraad, $artmaxVoorraad, $artLocatie);
-			$artikel->updateartikel($artid);		           
+			$artikel->updateartikel($consolenaam);		           
             echo "Dit zijn de gewijzigde gegevens: <br/>";
-            echo $artid."<br/>";
+            echo $consolenaam."<br/>";
 		?>
 		   <a href="home.php"><br/>Terug naar het hoofdmenu</a>
 </div>

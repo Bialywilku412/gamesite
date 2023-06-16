@@ -92,7 +92,7 @@
 			require "connectSchool.php";
 
 			// gegevens naar variabelen
-			$klantid = NULL;
+			$consoleid = NULL;
 			$naam = $this->getNaam();
 			$email = $this->getEmail();
 			$adres = $this->getadres();
@@ -102,11 +102,11 @@
 			// sql
 			$sql = $conn->prepare("
 			insert into klanten values 
-				(:klantid, :naam, :email, :adres, :postcode, :woonplaats);
+				(:consoleid, :naam, :email, :adres, :postcode, :woonplaats);
 			");
 
 			// variabelen in de statement
-			$sql->bindParam(":klantid", $klantid);
+			$sql->bindParam(":consoleid", $consoleid);
 			$sql->bindParam(":naam", $naam);
 			$sql->bindParam(":email", $email);
 			$sql->bindParam(":adres", $adres);
@@ -129,7 +129,7 @@
 			{
 				// gegevens uit de array in het object stoppen
 				// en gelijk afdrukken
-				echo $klant["klantid"]. " - ";		// geen eigenschap van object
+				echo $klant["consoleid"]. " - ";		// geen eigenschap van object
 				echo $this->naam=$klant["naam"]. " - ";
 				echo $this->adres=$klant["adres"]. " - ";
 				echo $this->email=$klant["email"]. " - ";
@@ -138,11 +138,11 @@
 				
 			}
 		}
-        public function updateklant($klantid)
+        public function updateklant($consoleid)
 		{
 			require "Connectschool.php";
 			// gegevens uit het object in variabelen zetten 
-			$klantid;
+			$consoleid;
 			$naam 		= $this->getnaam();
 			$email 		= $this->getemail();
 			$adres 		= $this->getadres();
@@ -152,10 +152,10 @@
 			$sql = $conn->prepare("
 			update klanten
 										set  naam=:naam, email=:email, adres=:adres, postcode=:postcode, woonplaats=:woonplaats
-										where klantid=:klantid
+										where consoleid=:consoleid
 								 ");
 			// variabelen in de statement zetten
-			$sql->bindParam(":klantid", $klantid);
+			$sql->bindParam(":consoleid", $consoleid);
 			$sql->bindParam(":naam", $naam);
 			$sql->bindParam(":email", $email);
 			$sql->bindParam(":adres", $adres);
@@ -165,20 +165,20 @@
 		}
 
 		
-        public function deleteklant($klantid)
+        public function deleteklant($consoleid)
 		{
 			require "Connectschool.php";
 			// statement maken
 			$sql = $conn->prepare("
 									delete from klanten
-									where klantid = :klantid
+									where consoleid = :consoleid
 								 ");
 			// variabele in de statement zetten
-			$sql->bindParam(":klantid", $klantid);
+			$sql->bindParam(":consoleid", $consoleid);
 			$sql->execute();
 		}
 
-        public function searchklant($klantid) 
+        public function searchklant($consoleid) 
 		{
 			require "Connectschool.php";
 
@@ -186,10 +186,10 @@
 			$sql = $conn->prepare("
 									select *
 									from klanten
-									where klantid = :klantid			
+									where consoleid = :consoleid			
 								 ");
 			// variabele in de stament zetten
-			$sql->bindParam(":klantid", $klantid);
+			$sql->bindParam(":consoleid", $consoleid);
 			$sql->execute();
 
 			// gegevens uit de array in het object stoppen

@@ -38,14 +38,14 @@
 		<?php
 			require "klant.php";
 
-		    $klantid = $_POST["klantidvak"];
+		    $consoleid = $_POST["consoleidvak"];
 			$verwijderen = $_POST["verwijderBox"];
 			
 			if ($verwijderen=="ja")
 			{
 				echo "De klant is verwijderd <br/>";
 				$klant1 =  new klant();
-				$klant1->deleteklant($klantid);
+				$klant1->deleteklant($consoleid);
 			}
 			else
 			{
