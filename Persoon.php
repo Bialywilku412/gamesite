@@ -4,63 +4,48 @@
 	class Persoon
 	{
 		// properties - eigenschappen --------------------
-		protected string $naam;
-		protected string $email;
-		protected string $adres;
-		protected string $postcode;
-		protected string $woonplaats;
+		protected string $levnaam;
+		protected string $levcontact;
+		protected string $levemail;
+
 		
 		
 		// methoden - functies ----------------------------
 		// constructor
-		function __construct($naam=NULL, $email=NULL)
+		function __construct($levnaam=NULL, $levcontact=NULL)
 		{
-			$this->naam=$naam;
-			$this->email=$email;
+			$this->levnaam=$levnaam;
+			$this->levcontact=$levcontact;
 		}
 
 		// setters
-		public function setNaam($naam)
+		public function setlevnaam($levnaam)
 		{
-			$this->naam=$naam;
+			$this->levnaam=$levnaam;
 		}
-		public function setEmail($email)
+		public function setlevcontact($levcontact)
 		{
-			$this->email=$email;
+			$this->levcontact=$levcontact;
 		}
-		public function setadres($adres)
+		public function setlevemail($levemail)
 		{
-			$this->adres=$adres;
-		}
-		public function setpostcode($postcode)
-		{
-			$this->postcode=$postcode;
-		}
-		public function setwoonplaats($woonplaats)
-		{
-			$this->woonplaats=$woonplaats;
+			$this->levemail=$levemail;
 		}
 		
+		
 		// getters
-		public function getNaam()
+		public function getlevnaam()
 		{
-			return $this->naam;
+			return $this->levnaam;
 		}
-	    public function getEmail()
+	    public function getlevcontact()
 		{
-			return $this->email;
+			return $this->levcontact;
 		}
-		public function getadres()
+		public function getlevemail()
 		{
-			return $this->adres;
+			return $this->levemail;
 		}
-		public function getpostcode()
-		{
-			return $this->postcode;
-		}
-		public function getwoonplaats()
-		{
-			return $this->email;
-		}
+		
 	}	
 ?>

@@ -41,21 +41,15 @@
 
     <form class="contact-form" action="createleverancierFormulier2.php" method="post">
       <label>
-        <input type="text" id="naamvak" class="contact-form-text" placeholder="Naam" name="naamvak"><br />
+        <input type="text" id="levnaamvak" class="contact-form-text" placeholder="levnaam" name="levnaamvak"><br />
       </label>
       <label>
-        <input type="text" id="emailvak" class="contact-form-text" placeholder=" E-mail" name="emailvak"><br />
+        <input type="text" id="levcontactvak" class="contact-form-text" placeholder=" levcontact" name="levcontactvak"><br />
       </label>
       <label>
-        <input type="text" id="adresvak" class="contact-form-text" placeholder="adres" name="adresvak"><br />
+        <input type="text" id="levemailvak" class="contact-form-text" placeholder="levemail" name="levemailvak"><br />
       </label>
-      <label>
-        <input type="text" id="postcodevak" class="contact-form-text" placeholder="postcode" name="postcodevak"><br />
-      </label>
-      <label>
-        <input type="text" id="woonplaatsvak" class="contact-form-text" placeholder="woonplaats"
-          name="woonplaatsvak"><br />
-      </label>
+      
       <input type="submit" class="contatct-form-btn" value="Verstuur">
 
     </form>

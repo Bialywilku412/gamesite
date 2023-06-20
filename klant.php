@@ -5,83 +5,61 @@
 	class klant extends Persoon
 	{
 		// properties - eigenschappen -------------------
-		protected string $naam;
-		protected string $email;
-		protected string $adres;
-		protected string $postcode;
-		protected string $woonplaats;
-		
+		protected string $levnaam;
+		protected string $levcontact;
+		protected string $levemail;
+	
+	
 		// methoden - functies -------------------
 		// constructor
-		function __construct($naam="", $email="", $adres="", $postcode="", $woonplaats="")
+		function __construct($levnaam="", $levcontact="", $levemail="")
 		{
-			$this->naam=$naam;
-			$this->email=$email;
-			$this->adres=$adres;
-			$this->postcode=$postcode;
-			$this->woonplaats=$woonplaats;
+			$this->levnaam=$levnaam;
+			$this->levcontact=$levcontact;
+			$this->levemail=$levemail;
+		
 		}
-
 		// setters
-		public function setnaam($naam)
+		public function setlevnaam($levnaam)
 		{
-			$this->naam=$naam;
+			$this->levnaam=$levnaam;
 		}
-		public function setemail($email)
+		public function setlevcontact($levcontact)
 		{
-			$this->email=$email;
+			$this->levcontact=$levcontact;
 		}
-		public function setadres($adres)
+		public function setlevemail($levemail)
 		{
-			$this->adres=$adres;
-		}
-		public function setpostcode($postcode=NULL)
-		{
-			$this->postcode=$postcode;
-		}
-		public function setwoonplaats($woonplaats=NULL)
-		{
-			$this->woonplaats=$woonplaats;
+			$this->levemail=$levemail;
 		}
 
 		// getters
-		public function getnaam()
+		public function getlevnaam()
 		{
-			return $this->naam;
+			return $this->levnaam;
 		}
-		public function getemail()
+		public function getlevcontact()
 		{
-			return $this->email;
+			return $this->levcontact;
 		}	
 
-		public function getadres()
+		public function getlevemail()
 		{
-			return $this->adres;
+			return $this->levemail;
 		}	
 
-		public function getpostcode()
-		{
-			return $this->postcode;
-		}	
-
-		public function getwoonplaats()
-		{
-			return $this->woonplaats;
-		}	
+		
 			public function afdrukken()
 		{
 
 			// afdrukken object -------------------
-			echo $this->getNaam();
+			echo $this->getlevnaam();
 			echo "<br/>";
-			echo $this->getEmail();
+			echo $this->getlevcontact();
 			echo "<br/>";
-			echo $this->getadres();
+			echo $this->getlevemail();
 			echo "<br/>";
-			echo $this->getpostcode();
-			echo "<br/>";
-			echo $this->getwoonplaats();
-			echo "<br/>";
+			
 			
 			echo "<br/><br/>";
 		}
@@ -92,26 +70,23 @@
 			require "connectSchool.php";
 
 			// gegevens naar variabelen
-			$consoleid = NULL;
-			$naam = $this->getNaam();
-			$email = $this->getEmail();
-			$adres = $this->getadres();
-			$postcode = $this->getpostcode();
-			$woonplaats = $this->getwoonplaats();
+			$levid = NULL;
+			$levnaam = $this->getlevnaam();
+			$levcontact = $this->getlevcontact();
+			$levemail = $this->getlevemail();
+		
 
 			// sql
 			$sql = $conn->prepare("
-			insert into klanten values 
-				(:consoleid, :naam, :email, :adres, :postcode, :woonplaats);
+			insert into leveranciers values 
+				(:levid, :levnaam, :levcontact, :levemail);
 			");
 
 			// variabelen in de statement
-			$sql->bindParam(":consoleid", $consoleid);
-			$sql->bindParam(":naam", $naam);
-			$sql->bindParam(":email", $email);
-			$sql->bindParam(":adres", $adres);
-			$sql->bindParam(":postcode", $postcode);
-			$sql->bindParam(":woonplaats", $woonplaats);
+			$sql->bindParam(":levid", $levid);
+			$sql->bindParam(":levnaam", $levnaam);
+			$sql->bindParam(":levcontact", $levcontact);
+			$sql->bindParam(":levemail", $levemail);
 			$sql->execute();
 			echo "Toegevoegd aan de database <br>";
 
@@ -122,85 +97,82 @@
 			// statement maken
 			$sql = $conn->prepare("
 									select *
-									from klanten where 1  
+									from leveranciers where 1  
 								 ");
 			$sql->execute();
 			foreach($sql as $klant)
 			{
 				// gegevens uit de array in het object stoppen
 				// en gelijk afdrukken
-				echo $klant["consoleid"]. " - ";		// geen eigenschap van object
-				echo $this->naam=$klant["naam"]. " - ";
-				echo $this->adres=$klant["adres"]. " - ";
-				echo $this->email=$klant["email"]. " - ";
-				echo $this->postcode=$klant["postcode"]. " - ";
-				echo $this->woonplaats=$klant["woonplaats"]. "<br/><br>"; 
+				echo $klant["levid"]. " - ";		// geen eigenschap van object
+				echo $this->levnaam=$klant["levnaam"]. " - ";
+				echo $this->levcontact=$klant["levcontact"]. " - ";
+				echo $this->levemail=$klant["levemail"]. " - ";
+				
 				
 			}
 		}
-        public function updateklant($consoleid)
-		{
-			require "Connectschool.php";
-			// gegevens uit het object in variabelen zetten 
-			$consoleid;
-			$naam 		= $this->getnaam();
-			$email 		= $this->getemail();
-			$adres 		= $this->getadres();
-			$postcode 	= $this->getpostcode();
-			$woonplaats 	= $this->getwoonplaats();
-			// statement maken
-			$sql = $conn->prepare("
-			update klanten
-										set  naam=:naam, email=:email, adres=:adres, postcode=:postcode, woonplaats=:woonplaats
-										where consoleid=:consoleid
-								 ");
-			// variabelen in de statement zetten
-			$sql->bindParam(":consoleid", $consoleid);
-			$sql->bindParam(":naam", $naam);
-			$sql->bindParam(":email", $email);
-			$sql->bindParam(":adres", $adres);
-			$sql->bindParam(":postcode", $postcode);
-			$sql->bindParam(":woonplaats", $woonplaats);
-			$sql->execute();
-		}
+        public function updateklant($levid)
+{
+    require_once "Connectschool.php";
+
+    // Retrieve data from the object's properties
+    $levnaam = $this->getLevNaam();
+    $levcontact = $this->getLevContact();
+    $levemail = $this->getLevEmail();
+
+    // Create the SQL statement
+    $sql = $conn->prepare("
+        UPDATE leveranciers
+        SET levnaam = :levnaam, levcontact = :levcontact, levemail = :levemail
+        WHERE levid = :levid
+    ");
+
+    // Bind the variables to the statement parameters
+    $sql->bindParam(":levnaam", $levnaam);
+    $sql->bindParam(":levcontact", $levcontact);
+    $sql->bindParam(":levemail", $levemail);
+    $sql->bindParam(":levid", $levid);
+
+    $sql->execute();
+}
 
 		
-        public function deleteklant($consoleid)
+        public function deleteklant($levid)
 		{
 			require "Connectschool.php";
 			// statement maken
 			$sql = $conn->prepare("
-									delete from klanten
-									where consoleid = :consoleid
+									delete from leveranciers
+									where levid = :levid
 								 ");
 			// variabele in de statement zetten
-			$sql->bindParam(":consoleid", $consoleid);
+			$sql->bindParam(":levid", $levid);
 			$sql->execute();
 		}
 
-        public function searchklant($consoleid) 
+        public function searchklant($levid) 
 		{
 			require "Connectschool.php";
 
 			// statement maken
 			$sql = $conn->prepare("
 									select *
-									from klanten
-									where consoleid = :consoleid			
+									from leveranciers
+									where levid = :levid			
 								 ");
 			// variabele in de stament zetten
-			$sql->bindParam(":consoleid", $consoleid);
+			$sql->bindParam(":levid", $levid);
 			$sql->execute();
 
 			// gegevens uit de array in het object stoppen
 			foreach($sql as $klant)
 			{			
 				
-				echo $this->naam=$klant["naam"];
-				echo $this->adres=$klant["adres"];
-				echo $this->email=$klant["email"];
-				echo $this->postcode=$klant["postcode"];
-				echo $this->woonplaats=$klant["woonplaats"];	
+				echo $this->levnaam=$klant["levnaam"];
+				echo $this->levcontact=$klant["levcontact"];
+				echo $this->levemail=$klant["levemail"];
+				
 			}
 		}
 	}

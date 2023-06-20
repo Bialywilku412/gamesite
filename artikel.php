@@ -6,7 +6,7 @@ class artikel
 	// properties - eigenschappen -------------------
 	protected string $gamenaam;
 	protected float $gameprijs;
-	protected float $gameplatform;
+	protected string $gameplatform;
 
 
 	// methoden - functies -------------------

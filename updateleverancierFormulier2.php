@@ -32,34 +32,32 @@
 <body STYLE="background-color: #808080">
 	<div class="h33">
 		<p><h1>update klant formulier 2</h1></p>
-		
 		<?php
-			// Anjo Eijeriks
+			
 			require "klant.php";					// nodig om object te maken
-			$consoleid = $_POST["consoleidvak"];	// uitlezen vakje van klant 
+			$levid = $_POST["levidvak"];	// uitlezen vakje van klant 
 			$klant1 = new klant();				// object aanmaken
-			$klant1->searchklant($consoleid);	
+			$klant1->searchklant($levid);	
+            
 			// properties in variabelen zetten
-			$naam=$klant1->getnaam();
-			$email=$klant1->getemail();
-			$adres=$klant1->getadres();
-			$postcode=$klant1->getpostcode();
-            $woonplaats=$klant1->getwoonplaats();
+			$levnaam=$klant1->getlevnaam();
+			$levcontact=$klant1->getlevcontact();
+			$levemail=$klant1->getlevemail();
+       
+		
+            
             
 		?>
-	</div>
-		<form class="contact-form" action="updateleverancierFormulier3.php"method="post">
+		
+		<form class="contact-form" action="updateleverancierFormulier3.php" method="post">
 			<!-- $klant mag niet meer gewijzigd worden -->
-            <?php echo $consoleid ?>
-            <input type="hidden" class="contact-form-text" name="consoleidvak" value="<?php echo $consoleid; ?> ">
-            <input type="text"   class="contact-form-text" name="naamVak"      value="<?php echo $naam;      ?> ">
-            <input type="text"   class="contact-form-text" name="emailvak" value="<?php echo $email; ?> ">
-			<input type="text"   class="contact-form-text" name="adresvak" value="<?php echo $adres; ?> ">
-            <input type="text"   class="contact-form-text" name="postcodeVak"  value="<?php echo $postcode;  ?> ">
-            <input type="text"   class="contact-form-text" name="woonplaatsvak"  value="<?php echo $woonplaats;  ?> ">
-			<input type="submit" class="contatct-form-btn" value="Verstuur"><br/><br/>
+            <?php echo $levid ?>
+            <input type="hidden" class="contact-form-text" name="levidvak" value="<?php echo $levid; ?> "><br />
+            <input type="text"    class="contact-form-text" name="levnaamvak" value="<?php echo $levnaam; ?> ">
+			<input type="text"    class="contact-form-text" name="levcontactvak" value="<?php echo $levcontact; ?> ">
+            <input type="text"    class="contact-form-text" name="levemailvak"  value="<?php echo $levemail;  ?> ">
+			<input type="submit"  class="contatct-form-btn" value="Verstuur"><br/><br/>
 		</form>
-
 
 
         <a href="home.php"><br/>Terug naar het hoofdmenu</a>

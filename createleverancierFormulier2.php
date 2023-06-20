@@ -32,14 +32,13 @@
 			require "klant.php";
 			
 			// uitlezen vakjes van createStudentForm1
-			$naam=$_POST["naamvak"];
-			$email=$_POST["emailvak"];
-			$adres=$_POST["adresvak"];
-            $postcode=$_POST["postcodevak"];
-            $woonplaats=$_POST["woonplaatsvak"];
+			$levnaam=$_POST["levnaamvak"];
+			$levcontact=$_POST["levcontactvak"];
+			$levemail=$_POST["levemailvak"];
+          
 			
 			// maken object -----------------------
-			$klant1 = new klant($naam, $email, $adres, $postcode, $woonplaats);
+			$klant1 = new klant($levnaam, $levcontact, $levemail);
 			
 			// In de database zetten
 			$klant1->createklant();

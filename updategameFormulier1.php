@@ -35,9 +35,10 @@
 
 <body STYLE="background-color: #808080">
     <div class="h33">
+
         <h1>update game formulier </h1>
         <form class="contact-form" action="updategameFormulier2.php" method="post">
-            <input type="text" id="gameidvak" class="contact-form-text" name="gameidvak" placeholder="consolenaam">
+            <input type="text" id="gameidvak" class="contact-form-text" name="gameidvak" placeholder="gameid">
             <input type="submit" class="contatct-form-btn" value="Verstuur"><br /><br />
         </form>
         <a href="home.php"><br />Terug naar het hoofdmenu</a>

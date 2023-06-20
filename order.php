@@ -119,32 +119,31 @@
 			}
 		}
 		
-        public function updateorder($consoleid)
-{
-    require "Connectschool.php";
-    
-    // Retrieve data from the object and assign them to variables
-    $consolenaam = $this->getconsolenaam();
-    $consoleprijs = $this->getconsoleprijs();
-    $consoletype = $this->getconsoletype();
-    
-    // Prepare the SQL statement
-    $sql = $conn->prepare("
-        UPDATE console
-        SET consolenaam=:consolenaam, consoleprijs=:consoleprijs, consoletype=:consoletype
-        WHERE consoleid=:consoleid
-    ");
-    
-    // Bind variables to the statement parameters
-    $sql->bindParam(":consoleid", $consoleid);
-    $sql->bindParam(":consolenaam", $consolenaam);
-    $sql->bindParam(":consoleprijs", $consoleprijs);
-    $sql->bindParam(":consoletype", $consoletype);
-    
-    // Execute the statement
-    $sql->execute();
-}
-
+		public function updateorder($consoleid)
+		{
+			require "connectSchool.php";
+			// gegevens uit het object in variabelen zetten 
+	
+			$consolenaam = $this->getconsolenaam();
+			$consoleprijs = $this->getconsoleprijs();
+			$consoletype = $this->getconsoletype();
+	
+			// statement maken
+			$sql = $conn->prepare("
+				update console	
+							set consolenaam=:consolenaam, consoleprijs=:consoleprijs, consoletype=:consoletype
+							where consoleid=:consoleid
+									 ");
+			// variabelen in de statement zetten
+	
+			$sql->bindParam(":consolenaam", $consolenaam);
+			$sql->bindParam(":consoleprijs", $consoleprijs);
+			$sql->bindParam(":consoletype", $consoletype);
+			$sql->bindParam(":consoleid", $consoleid);
+	
+	
+			$sql->execute();
+		}
 		
 		public function deleteorder($consoleid)
 		{

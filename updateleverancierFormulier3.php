@@ -34,24 +34,27 @@
 	<div class="h33">
 		<h1>update klant formulier 3</h1>
 		
-		<?php
+		
+
+            <?php
 			require "klant.php";
 
             // gegevens uit de array in variabelen stoppen
-		    $consoleid = $_POST["consoleidvak"];
-			$naam = $_POST["naamVak"];
-			$email = $_POST["emailvak"];
-			$adres = $_POST["adresvak"];
-            $postcode = $_POST["postcodeVak"];
-            $woonplaats = $_POST["woonplaatsvak"];
+            $levid = $_POST["levidvak"];
+			$levnaam = $_POST["levnaamvak"];
+			$levcontact = $_POST["levcontactvak"];
+            $levemail = $_POST["levemailvak"];
+    
+        
            
 			
             // maken object ---------------------------------------------------
-			$klant1 = new klant($naam, $email, $adres, $postcode, $woonplaats);
-			$klant1->updateklant($consoleid);		           
+			$klant1 = new klant($levnaam, $levcontact, $levemail);      
+            $klant1->updateklant($levid);
             echo "Dit zijn de gewijzigde gegevens: <br/>";
-            echo $consoleid."<br/>";
+            echo $levid."<br/>";
 		?>
+        
 		   <a href="home.php"><br/>Terug naar het hoofdmenu</a>
 		</div>
 	</body>

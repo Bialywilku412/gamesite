@@ -59,7 +59,7 @@
             name="gameprijsvak"><br />
         </label>
         <label>
-          <input type="number" id="gameplatformvak" class="contact-form-text" placeholder="gameplatform"
+          <input type="text" id="gameplatformvak" class="contact-form-text" placeholder="gameplatform"
             name="gameplatformvak"><br />
         </label>
         <input type="submit" class="contatct-form-btn" value="Verstuur">

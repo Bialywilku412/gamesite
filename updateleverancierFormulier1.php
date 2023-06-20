@@ -35,10 +35,10 @@
     <div class="contact-section">
   <h1>     </h1>
 
-  <form class="contact-form" action="updateleverancierFormulier2.php" method="post">
-			<label for="consoleid"></label>
-			<input type="text" id = "consoleid" class="contact-form-text" name="consoleidvak" placeholder="consoleidvak">
-			<input type="submit" class="contatct-form-btn" value="Verstuur">		
+    
+  <form class="contact-form"action="updateleverancierFormulier2.php" method="post">
+			<input type="text" id = "levid"class="contact-form-text" name="levidvak" placeholder="levidvak">
+			<input type="submit" class="contatct-form-btn" value="Verstuur"><br/><br/>
 		</form>
 
         <a href="home.php"><br/>Terug naar het hoofdmenu</a>

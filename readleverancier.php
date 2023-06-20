@@ -37,7 +37,7 @@
     <p>
         Dit zijn alle gegevens
     <br>
-    <a href="home.php"><br/>Terug naar het hoofdmenu</a>
+ 
     </p>
     
     <?php
@@ -45,7 +45,7 @@
 			$klant1 = new klant();
 			$klant1->readklant();
 		?>
-		<a href="verkoper.php"><br/>Terug naar het hoofdmenu</a>
+		<a href="leverancier.php"><br/>Terug naar het hoofdmenu</a>
 
 </div>
 </body>

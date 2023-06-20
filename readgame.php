@@ -36,7 +36,7 @@
     <p>
         Dit zijn alle games
     <br>
-    <a href="home.php"><br/>Terug naar het hoofdmenu</a>
+    
     </p>
     <?php
 			require "artikel.php";			
@@ -44,7 +44,7 @@
             $artikel->readartikel();
 		?>
 	
-
+    <a href="home.php"><br/>Terug naar het hoofdmenu</a>
 </div>
 </body>
 <style>

@@ -35,7 +35,7 @@
 		<h1>update order formulier 1</h1>
         
 		<form class="contact-form"action="updateconsoleFormulier2.php" method="post">
-			<input type="text" id = "consoleid"class="contact-form-text" name="consoleidvak" placeholder="consoleidvak">
+			<input type="text" id = "consoleidvak"class="contact-form-text" name="consoleidvak" placeholder="consoleid">
 			<input type="submit" class="contatct-form-btn" value="Verstuur"><br/><br/>
 		</form>
         <a href="home.php"><br/>Terug naar het hoofdmenu</a>

@@ -53,7 +53,7 @@
   <form class="contact-form" action="createconsoleForm2.php" method="post">
 
     <label>
-      <input type="text" id = "consolenaamvak" class="contact-form-text" placeholder="consolenaam" name="consolenaamvak"><br/>
+      <input type="text" id = "consolelevlevnaamvak" class="contact-form-text" placeholder="consolelevnaam" name="consolelevnaamvak"><br/>
     </label>
     <label>
       <input type="text" id = "consoleprijsvak" class="contact-form-text" placeholder="consoleprijs" name="consoleprijsvak"><br/>

@@ -37,13 +37,13 @@
 			require "connectSchool.php";
 			// uitlezen vakjes van createStudentForm1
 			
-            $consolenaamvak=$_POST["consolenaamvak"];
+            $consolelevnaamvak=$_POST["consolelevnaamvak"];
             $consoleprijsvak=$_POST["consoleprijsvak"];
 			$consoletypevak=$_POST["consoletypevak"];
 			
            
 			// maken object -----------------------
-			$order = new order( $consolenaamvak, $consoleprijsvak, $consoletypevak);
+			$order = new order( $consolelevnaamvak, $consoleprijsvak, $consoletypevak);
 			
 			// In d->createorder();
 

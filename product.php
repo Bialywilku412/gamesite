@@ -6,10 +6,7 @@ class product
 	protected string $gamenaam;
 	protected string $gameprijs;
 	protected string $gameplatform;
-	protected string $artvoorraad;
-	protected string $artminvoorraad;
-	protected string $artmaxvoorraad;
-	protected string $artLocatie;
+	
 
 
 	// methoden - functies ----------------------------
@@ -33,22 +30,7 @@ class product
 	{
 		$this->gameplatform = $gameplatform;
 	}
-	public function setartvoorraad($artvoorraad)
-	{
-		$this->artvoorraad = $artvoorraad;
-	}
-	public function setartminvoorraad($artminvoorraad)
-	{
-		$this->artminvoorraad = $artminvoorraad;
-	}
-	public function setartmaxvoorraad($artmaxvoorraad)
-	{
-		$this->artmaxvoorraad = $artmaxvoorraad;
-	}
-	public function setartLocatie($artLocatie)
-	{
-		$this->artLocatie = $artLocatie;
-	}
+	
 
 	// getters
 	public function getgamenaam()
@@ -63,22 +45,8 @@ class product
 	{
 		return $this->gameplatform;
 	}
-	public function getartvoorraad()
-	{
-		return $this->artvoorraad;
-	}
-	public function getartminvoorraad()
-	{
-		return $this->artminvoorraad;
-	}
-	public function getartmaxvoorraad()
-	{
-		return $this->artmaxvoorraad;
-	}
-	public function getartLocatie()
-	{
-		return $this->artLocatie;
-	}
+	
+	
 
 }
 ?>
